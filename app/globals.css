@@ -2,9 +2,7 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-
-
-/* Custom Theme Colors */
+/* ===== CUSTOM THEME COLORS ===== */
 :root {
   --primary: #4f46e5;
   --primary-foreground: #ffffff;
@@ -19,20 +17,27 @@
   --secondary-foreground: #0f0f1a;
 }
 
-/* Custom Button Animation */
+/* ===== GLOW ANIMATION FOR ALL BUTTONS ===== */
 @keyframes pulse-glow {
   0%, 100% {
     box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
   }
   50% {
-    box-shadow: 0 0 40px rgba(79, 70, 229, 0.6);
+    box-shadow: 0 0 50px rgba(79, 70, 229, 0.7);
   }
 }
 
+/* Apply glow animation to ALL buttons with the pulse-glow class */
 .pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+  animation: pulse-glow 2.5s ease-in-out infinite;
 }
 
+/* Option: Make ALL primary buttons glow automatically (remove the .pulse-glow class requirement) */
+button.bg-indigo-600 {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+/* ===== SHADCN UI DEFAULT THEME ===== */
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

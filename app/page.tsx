@@ -27,7 +27,7 @@ export default function Home() {
         <div className="max-w-2xl w-full rounded-3xl border border-white/10 bg-white/10 backdrop-blur-xl p-10 shadow-2xl text-center">
 
           <span className="inline-block px-4 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-sm font-medium">
-            Next.js + Tailwind CSS + Lazy Loading
+            Next.js + Tailwind CSS + shadcn UI + Lazy Loading
           </span>
 
           <h1 className="mt-6 text-6xl font-extrabold text-white">
@@ -36,10 +36,21 @@ export default function Home() {
 
           <p className="mt-4 text-lg text-gray-300 leading-8">
             Welcome to my first professional Next.js application.
-            This page uses <span className="text-indigo-400 font-semibold">Lazy Loading</span> for better performance!
+            This page uses <span className="text-indigo-400 font-semibold">Lazy Loading</span> for better performance
+            and <span className="text-purple-400 font-semibold">shadcn UI</span> for beautiful components!
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-4">
+            {/* shadcn UI Button with glow animation */}
+            <Button className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold shadow-lg shadow-indigo-500/30 px-8 py-6 text-lg pulse-glow">
+              Get Started
+            </Button>
+
+            <Link href="/about">
+            <Button variant="outline" className="border-gray-500 text-gray-200 hover:bg-white/10 px-8 py-6 text-lg">
+             Learn More
+              </Button>
+            </Link>
             {/* Login Button */}
             <Link href="/login">
               <Button className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-6 text-lg">
@@ -49,7 +60,7 @@ export default function Home() {
 
             {/* Dashboard Button */}
             <Link href="/dashboard">
-              <Button className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-6 text-lg">
+              <Button className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-6 text-lg">
                 Dashboard
               </Button>
             </Link>
@@ -57,7 +68,7 @@ export default function Home() {
             {/* Button to load lazy component */}
             <Button 
               onClick={() => setShowLazy(!showLazy)}
-              className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-6 text-lg"
+              className="bg-pink-600 hover:bg-pink-700 text-white font-semibold px-8 py-6 text-lg"
             >
               {showLazy ? "Hide Lazy Component" : "Load Lazy Component 🚀"}
             </Button>
